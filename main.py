@@ -22,8 +22,9 @@ from generateReport import generate_html_report
 try:
     URL = input("url:")
     url = requests.get(URL, allow_redirects=True).url
-    URL = url[0:url.find("!16s"):] + "!16s/g/11c5_1_5vw?hl=en"
+    URL = url[0:url.find("?entry=t"):] + "?hl=en"
     print(URL)
+
 except:
     sys.exit(1)
 
@@ -375,4 +376,3 @@ def save_reviews_to_file(reviews: List[Dict], title: str):
 
 if __name__ == "__main__":
     main()
-
